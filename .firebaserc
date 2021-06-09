@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "develop": "macallan-dev",
+    "production": "macallan",
+    "default": "macallan-dev"
+  },
+  "targets": {
+    "macallan-dev": {
+      "hosting": {
+        "macallan-admin-dev": [
+          "macallan-admin-dev"
+        ]
+      }
+    }
+  }
+}
