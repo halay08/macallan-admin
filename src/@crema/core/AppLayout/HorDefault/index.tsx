@@ -37,7 +37,7 @@ const HorDefault: React.FC<HorDefaultLayoutProps> = () => {
           <ContentView />
         </Box>
       </Box>
-      <ThemeSetting />
+
       <AppFooter />
       <AppFixedFooter />
     </Box>

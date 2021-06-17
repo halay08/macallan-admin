@@ -48,7 +48,6 @@ const MiniSidebarToggle: React.FC<MiniSidebarToggleProps> = () => {
           </Box>
         </Hidden>
       </Box>
-      <ThemeSetting />
     </Box>
   );
 };

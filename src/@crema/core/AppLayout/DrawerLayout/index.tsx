@@ -36,7 +36,6 @@ const DrawerLayout: React.FC<DrawerLayoutProps> = () => {
         </Box>
       </Box>
       <AppFixedFooter />
-      <ThemeSetting />
     </Box>
   );
 };

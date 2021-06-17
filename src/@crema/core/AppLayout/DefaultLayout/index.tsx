@@ -46,7 +46,6 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = () => {
         </Hidden>
       </Box>
       <AppFixedFooter />
-      <ThemeSetting />
     </Box>
   );
 };

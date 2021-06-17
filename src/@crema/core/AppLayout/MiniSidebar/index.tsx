@@ -48,7 +48,6 @@ const MiniSidebar: React.FC<MiniSidebarProps> = () => {
           </Box>
         </Hidden>
       </Box>
-      <ThemeSetting />
     </Box>
   );
 };

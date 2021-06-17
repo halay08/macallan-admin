@@ -44,7 +44,6 @@ const BitBucket: React.FC<BitBucketProps> = props => {
           </Box>
         </Hidden>
       </Box>
-      <ThemeSetting />
     </Box>
   );
 };

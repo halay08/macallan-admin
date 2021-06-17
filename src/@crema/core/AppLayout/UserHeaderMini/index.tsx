@@ -47,7 +47,6 @@ const HeaderUserMiniLayout: React.FC<HeaderUserMiniLayoutProps> = () => {
           </Box>
         </Hidden>
       </Box>
-      <ThemeSetting />
     </Box>
   );
 };

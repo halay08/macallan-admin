@@ -1,6 +1,7 @@
 {
   "projects": {
     "develop": "macallan-dev",
+    "staging": "macallan-ecf92",
     "production": "macallan",
     "default": "macallan-dev"
   },
@@ -9,6 +10,13 @@
       "hosting": {
         "macallan-admin-dev": [
           "macallan-admin-dev"
+        ]
+      }
+    },
+    "macallan-staging": {
+      "hosting": {
+        "macallan-admin-staging": [
+          "macallan-admin-staging"
         ]
       }
     }

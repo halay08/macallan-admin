@@ -261,7 +261,7 @@ const ThemeSetting: React.FC<ThemeSettingProps> = () => {
                 </Box>
                 <Box component="span" ml="auto">
                   <Switch
-                    checked={isRTL}
+                    checked={isRTL || false}
                     onChange={onChangeRtlSetting}
                     value="checkedA"
                     inputProps={{ 'aria-label': 'secondary checkbox' }}

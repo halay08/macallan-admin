@@ -48,7 +48,6 @@ const StandardLayout: React.FC<StandardLayoutProps> = () => {
           </Box>
         </Hidden>
       </Box>
-      <ThemeSetting />
     </Box>
   );
 };

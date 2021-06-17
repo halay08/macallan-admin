@@ -37,7 +37,7 @@ const HorLightNav: React.FC<HorLightNavProps> = () => {
           <ContentView />
         </Box>
       </Box>
-      <ThemeSetting />
+
       <AppFooter />
       <AppFixedFooter />
     </Box>
