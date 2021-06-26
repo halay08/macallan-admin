@@ -6,17 +6,17 @@
     "default": "macallan-dev"
   },
   "targets": {
+    "macallan-ecf92": {
+      "hosting": {
+        "macallan-admin-staging": [
+          "macallan-admin-staging"
+        ]
+      }
+    },
     "macallan-dev": {
       "hosting": {
         "macallan-admin-dev": [
           "macallan-admin-dev"
-        ]
-      }
-    },
-    "macallan-staging": {
-      "hosting": {
-        "macallan-admin-staging": [
-          "macallan-admin-staging"
         ]
       }
     }

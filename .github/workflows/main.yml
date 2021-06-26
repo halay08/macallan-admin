@@ -1,4 +1,4 @@
-`name: CI/CD
+name: CI/CD
 
 # How to
 # Run `firebase login:ci` Then copy your token.
