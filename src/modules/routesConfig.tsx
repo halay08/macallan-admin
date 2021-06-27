@@ -26,6 +26,14 @@ const routesConfig: NavItemProps[] = [
         icon: 'apps',
         type: 'item',
         url: '/gallery/list'
+      },
+      {
+        id: 'galleryDetail',
+        title: 'Gallery Detail',
+        messageId: 'sidebar.galleryDetail',
+        icon: 'art_track',
+        type: 'item',
+        url: '/gallery/detail'
       }
     ]
   },

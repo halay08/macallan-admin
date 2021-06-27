@@ -2,7 +2,7 @@ import React from 'react';
 import GridItem from './GridItem';
 import AppGrid from '../../../../@crema/core/AppGrid';
 import ListEmptyResult from '../../../../@crema/core/AppList/ListEmptyResult';
-import { IArtworkEntity } from '../types';
+import { IArtworkEntity } from '../../types';
 
 type props = {
   ecommerceList: Array<IArtworkEntity>;
