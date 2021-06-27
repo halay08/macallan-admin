@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: CremaTheme) => {
       display: 'flex'
     },
     mainContainer: {
-      width: `calc(100vw - 19rem)`,
+      width: `calc(100vw - 20rem)`,
       paddingBottom: (props: { footer: boolean }) => (props.footer ? 0 : 10),
       transition: 'all 0.5s ease',
 

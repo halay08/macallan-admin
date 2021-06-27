@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: CremaTheme) => ({
     backgroundColor: theme.palette.background.paper,
     color: theme.palette.text.primary,
     [theme.breakpoints.up('lg')]: {
-      width: 'calc(100vw - 19rem)'
+      width: 'calc(100vw - 20rem)'
     },
     [theme.breakpoints.up('xl')]: {
       width: 'calc(100vw - 21.6rem)'

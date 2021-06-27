@@ -49,10 +49,10 @@ const useStyles = makeStyles((theme: CremaTheme) => {
       paddingBottom: footer ? 0 : 10,
       width: '100%',
       [theme.breakpoints.up('lg')]: {
-        width: `calc(100vw - 19rem)`
+        width: `calc(100vw - 20rem)`
       },
       [theme.breakpoints.up('xl')]: {
-        width: `calc(100vw - 21.6rem)`
+        width: `calc(100vw - 22.6rem)`
       },
 
       '& > .scrollbar-container': {
