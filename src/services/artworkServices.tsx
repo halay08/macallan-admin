@@ -57,7 +57,7 @@ export class ArtworkService extends HttpsCallable {
    * @returns updated artwork
    */
   async approveArtwork(id = '') {
-    const artwork = await this.callHttpsCallable('approveArtwork', id);
+    const artwork = await this.callHttpsCallable('approveArtwork', { id });
     return artwork;
   }
 
@@ -68,7 +68,7 @@ export class ArtworkService extends HttpsCallable {
    * @returns updated artwork
    */
   async rejectArtwork(id = '') {
-    const artwork = await this.callHttpsCallable('rejectArtwork', id);
+    const artwork = await this.callHttpsCallable('rejectArtwork', { id });
     return artwork;
   }
 }

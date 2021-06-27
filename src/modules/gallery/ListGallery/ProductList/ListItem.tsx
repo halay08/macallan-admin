@@ -3,7 +3,7 @@ import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import { Fonts } from '../../../../shared/constants/AppEnums';
-import { IArtworkEntity } from '../types';
+import { IArtworkEntity } from '../../types';
 
 const useStyles = makeStyles(theme => ({
   root: {

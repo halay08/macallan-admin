@@ -28,3 +28,15 @@ export type IArtworkEntity = {
   contact?: Partial<IContact>;
   status: ICyoStatus;
 };
+
+export const statusFormatter = {
+  in_review: 'In Review',
+  approved: 'Approved',
+  rejected: 'Rejected'
+};
+
+export const statusColor = {
+  in_review: 'info.main',
+  approved: 'success.main',
+  rejected: 'error.main'
+};

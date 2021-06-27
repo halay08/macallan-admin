@@ -4,8 +4,9 @@ import { makeStyles } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import clsx from 'clsx';
 import { Fonts } from '../../../../shared/constants/AppEnums';
-import { IArtworkEntity } from '../types';
-import { firebaseTimestampToDate } from 'shared/ultis';
+import { IArtworkEntity, statusColor, statusFormatter } from '../../types';
+import { firebaseTimestampToDate, getFirebaseImageLink } from 'shared/ultis';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   textUppercase: {
@@ -45,35 +46,25 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const statusFormatter = {
-  in_review: 'In Review',
-  approved: 'Approved',
-  rejected: 'Rejected'
-};
-
-const statusColor = {
-  in_review: 'info.main',
-  approved: 'success.main',
-  rejected: 'error.main'
-};
-
 type props = {
   item: IArtworkEntity;
 };
 
 const GridItem = (props: props) => {
   const { item } = props;
-
-  const getImageLink = (imgSrc: string) => {
-    const firebaseStorage = 'https://firebasestorage.googleapis.com/v0/b/';
-    const bucket = `${process.env.REACT_APP_FIREBASE_STORAGE_BUCKET}/o/`;
-    const imageName = imgSrc.replaceAll('/', '%2F');
-    return firebaseStorage + bucket + imageName + '?alt=media';
-  };
-
+  const history = useHistory();
   const classes = useStyles(props);
+
   return (
-    <Box p={5} m={2} className="pointer item-hover" onClick={() => {}} clone>
+    <Box
+      p={5}
+      m={2}
+      className="pointer item-hover"
+      onClick={() => {
+        history.push('/gallery/detail/' + item.id);
+      }}
+      clone
+    >
       <Card>
         <Box
           mt={2}
@@ -105,8 +96,8 @@ const GridItem = (props: props) => {
               className={classes.img}
               src={
                 item.thumbnails
-                  ? getImageLink(item.thumbnails.url)
-                  : getImageLink(item.imgUrl)
+                  ? getFirebaseImageLink(item.thumbnails.url)
+                  : getFirebaseImageLink(item.imgUrl)
               }
               alt="gallery"
             />

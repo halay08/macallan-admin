@@ -8,6 +8,10 @@ export const galleryConfigs = [
       {
         path: '/gallery/list',
         component: React.lazy(() => import('./ListGallery'))
+      },
+      {
+        path: '/gallery/detail/:id',
+        component: React.lazy(() => import('./GalleryDetail'))
       }
     ]
   }

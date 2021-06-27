@@ -7,7 +7,7 @@ import { Box, fade } from '@material-ui/core';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { AppContext } from '../../../@crema';
 import { AppState } from 'redux/store';
-import { IArtworkEntity } from './types';
+import { IArtworkEntity } from '../types';
 import ProductGrid from './ProductGrid';
 import { ArtworkService } from 'services';
 import { fetchError, fetchStart, fetchSuccess } from 'redux/actions';
@@ -51,7 +51,7 @@ const ListGallery = () => {
     (async () => {
       const newGalleries =
         !status || status === 'all'
-          ? await getGallery({ limit: 3 })
+          ? await getGallery()
           : await getGallery({ status });
       handleAfterGet(newGalleries);
     })();
