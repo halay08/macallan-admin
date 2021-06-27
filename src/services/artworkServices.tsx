@@ -1,8 +1,13 @@
-import HttpsCallable from '../httpsCallable';
+import HttpsCallable from './httpsCallable';
 
 export class ArtworkService extends HttpsCallable {
   async createArtwork(data) {
     const artwork = await this.callHttpsCallable('createArtwork', data);
+    return artwork;
+  }
+
+  async getArtworkById(id) {
+    const artwork = await this.callHttpsCallable('getArtworkById', { id });
     return artwork;
   }
 
@@ -43,5 +48,27 @@ export class ArtworkService extends HttpsCallable {
       ...options
     });
     return artworks;
+  }
+
+  /**
+   * Approve artwork
+   * @param id artwork id
+   *
+   * @returns updated artwork
+   */
+  async approveArtwork(id = '') {
+    const artwork = await this.callHttpsCallable('approveArtwork', id);
+    return artwork;
+  }
+
+  /**
+   * Reject artwork
+   * @param id artwork id
+   *
+   * @returns updated artwork
+   */
+  async rejectArtwork(id = '') {
+    const artwork = await this.callHttpsCallable('rejectArtwork', id);
+    return artwork;
   }
 }

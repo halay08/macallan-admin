@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme: CremaTheme) => {
       transition: 'all 0.5s ease',
       [theme.breakpoints.up('lg')]: {
         marginLeft: '19rem',
-        width: 'calc(100vw - 19rem)'
+        width: 'calc(100vw - 20rem)'
       },
       [theme.breakpoints.up('xl')]: {
         marginLeft: '21rem',

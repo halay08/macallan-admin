@@ -139,13 +139,11 @@ const GridView: React.FC<GridViewProps> = ({
     <Box className={classes.gridContainer}>
       <Box className={classes.columnRow} style={{ ...style }} {...rest}>
         <AppAnimateGroup>
-          {data.length > 0
-            ? data.map((item: any, index: number) => (
-                <Box key={'grid-' + index} className={classes.columnCount}>
-                  {renderRow(item, index)}
-                </Box>
-              ))
-            : null}
+          {data.map((item: any, index: number) => (
+            <Box key={'grid-' + index} className={classes.columnCount}>
+              {renderRow(item, index)}
+            </Box>
+          ))}
         </AppAnimateGroup>
       </Box>
       {data.length === 0 ? getEmptyContainer(ListEmptyComponent) : null}

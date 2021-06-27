@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme: CremaTheme) => ({
     width: '100%',
     boxShadow: '4px 3px 4px 0px rgba(0,0,0,0.12)',
     [theme.breakpoints.up('lg')]: {
-      width: 'calc(100vw - 19rem)'
+      width: 'calc(100vw - 20rem)'
     },
     [theme.breakpoints.up('xl')]: {
       width: 'calc(100vw - 21.6rem)'

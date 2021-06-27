@@ -4,7 +4,6 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { useLocation } from 'react-router-dom';
 import { AppSuspense } from '../../index';
 import routes from '../../../modules';
-import Scrollbar from '../Scrollbar';
 import AppContext from '../../utility/AppContext';
 import AppFooter from '../AppLayout/AppFooter';
 import Box from '@material-ui/core/Box';
@@ -37,7 +36,7 @@ const TransitionWrapper: React.FC<TransitionWrapperProps> = ({ children }) => {
 
 const ContentView = () => {
   return (
-    <Scrollbar>
+    <Box display="flex" flexDirection="column" height="100%" px={8} pt={7.5}>
       <Box
         display="flex"
         flex={1}
@@ -51,7 +50,7 @@ const ContentView = () => {
         </AppSuspense>
       </Box>
       <AppFooter />
-    </Scrollbar>
+    </Box>
   );
 };
 

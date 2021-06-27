@@ -15,4 +15,4 @@ export const defaultUser: AuthUser = {
   authType: AuthType.AUTH0,
   photoURL: 'https://via.placeholder.com/150'
 };
-export const initialUrl = '/dashboards/health-care'; // this url will open after login
+export const initialUrl = '/gallery/list'; // this url will open after login

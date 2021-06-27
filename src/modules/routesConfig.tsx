@@ -14,6 +14,22 @@ export interface NavItemProps {
 
 const routesConfig: NavItemProps[] = [
   {
+    id: 'gallery',
+    title: 'Gallery',
+    messageId: 'sidebar.gallery',
+    type: 'group',
+    children: [
+      {
+        id: 'listGallery',
+        title: 'List Gallery',
+        messageId: 'sidebar.listGallery',
+        icon: 'apps',
+        type: 'item',
+        url: '/gallery/list'
+      }
+    ]
+  },
+  {
     id: 'app',
     title: 'Application',
     messageId: 'sidebar.application',
