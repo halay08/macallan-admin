@@ -45,7 +45,7 @@ const AppFixedFooter: React.FC<AppFixedFooterProps> = () => {
             flexDirection="row"
             display="flex"
           >
-            <Box>Copy right @crema 2020</Box>
+            <Box>Copy right @Macallan 2021</Box>
             <Box ml="auto">
               <Box px={5} clone>
                 <Button color="primary">Buy Now</Button>

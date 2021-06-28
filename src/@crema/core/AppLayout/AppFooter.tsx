@@ -56,7 +56,7 @@ const AppFooter: React.FC<AppFooterProps> = () => {
             flexDirection="row"
             display="flex"
           >
-            <Box>Copy right @crema 2020</Box>
+            <Box>Copy right @Macallan 2021</Box>
             <Box ml="auto">
               <Button className={classes.btnRoot} color="primary">
                 Buy Now
