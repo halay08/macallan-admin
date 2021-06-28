@@ -41,7 +41,7 @@ jobs:
       - name: Build
         run: |
           yarn --pure-lockfile
-          yarn build
+          yarn build:develop
 
       - name: Activate Develop Project
         uses: w9jds/firebase-action@master
@@ -83,7 +83,7 @@ jobs:
       - name: Build
         run: |
           yarn --pure-lockfile
-          yarn build
+          yarn build:staging
 
       - name: Activate Staging Project
         uses: w9jds/firebase-action@master
@@ -98,7 +98,7 @@ jobs:
           args: deploy --only hosting:${{secrets.SITE}} --token ${{ secrets.FIREBASE_TOKEN }} --force --project staging
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-  
+
   deploy-production:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
@@ -125,7 +125,7 @@ jobs:
       - name: Build
         run: |
           yarn --pure-lockfile
-          yarn build
+          yarn build:production
 
       - name: Activate Production Project
         uses: w9jds/firebase-action@master
