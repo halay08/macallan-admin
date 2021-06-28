@@ -88,8 +88,9 @@
   "scripts": {
     "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
-    "build:dev": "env-cmd -f .env.development npm run build && firebase deploy --only hosting:macallan-admin-dev",
-    "build:staging": "env-cmd -f .env.staging npm run build && firebase deploy --only hosting:macallan-admin-staging",
+    "build:develop": "env-cmd -f .env.development yarn build",
+    "build:staging": "env-cmd -f .env.staging npm run build",
+    "build:production": "env-cmd -f .env.production npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "checkTs": "tsc --noEmit",
