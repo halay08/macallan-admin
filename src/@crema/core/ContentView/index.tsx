@@ -36,7 +36,14 @@ const TransitionWrapper: React.FC<TransitionWrapperProps> = ({ children }) => {
 
 const ContentView = () => {
   return (
-    <Box display="flex" flexDirection="column" height="100%" px={8} pt={7.5}>
+    <Box
+      display="flex"
+      flexDirection="column"
+      height="100%"
+      px={8}
+      pt={7.5}
+      mx="auto"
+    >
       <Box
         display="flex"
         flex={1}

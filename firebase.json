@@ -23,9 +23,6 @@
       ]
     }
   ],
-  "storage": {
-    "rules": "storage.rules"
-  },
   "emulators": {
     "functions": {
       "port": 5001

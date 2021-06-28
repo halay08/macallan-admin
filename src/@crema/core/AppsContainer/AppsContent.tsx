@@ -1,5 +1,4 @@
 import React, { CSSProperties, ReactNode } from 'react';
-import Scrollbar from '../Scrollbar';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { fade } from '@material-ui/core';
 import { CremaTheme } from '../../../types/AppContextPropsType';
@@ -70,9 +69,9 @@ const AppsContent: React.FC<AppsContentProps> = ({
     fullView
   });
   return (
-    <Scrollbar className={classes.appsContentContainer} style={style}>
+    <div className={classes.appsContentContainer} style={style}>
       {children}
-    </Scrollbar>
+    </div>
   );
 };
 

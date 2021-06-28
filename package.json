@@ -29,6 +29,7 @@
     "d3-geo": "^2.0.1",
     "date-fns": "^2.16.1",
     "draft-js": "^0.11.7",
+    "env-cmd": "^10.1.0",
     "firebase": "^8.0.0",
     "formik": "^2.2.1",
     "intl-messageformat-parser": "^6.4.4",
@@ -87,6 +88,8 @@
   "scripts": {
     "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
+    "build:dev": "env-cmd -f .env.development npm run build && firebase deploy --only hosting:macallan-admin-dev",
+    "build:staging": "env-cmd -f .env.staging npm run build && firebase deploy --only hosting:macallan-admin-staging",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "checkTs": "tsc --noEmit",
