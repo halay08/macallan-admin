@@ -91,7 +91,7 @@ const GridItem = (props: props) => {
           >
             {statusFormatter[item.status]}
           </Box>
-          <Box textAlign="center" height={300} width="100%">
+          <Box textAlign="center" height={200} width="100%">
             <img
               className={classes.img}
               src={

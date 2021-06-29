@@ -13,6 +13,7 @@ const ProductGrid = ({ ecommerceList, loading }: props) => {
   return (
     <AppGrid
       delay={200}
+      column={4}
       data={ecommerceList}
       renderRow={item => <GridItem item={item} key={item.id} />}
       ListEmptyComponent={
