@@ -23,6 +23,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const limit = 12;
+
 const ListGallery = () => {
   const classes = useStyles();
   const { theme } = useContext(AppContext);
@@ -31,7 +33,7 @@ const ListGallery = () => {
   );
   const dispatch = useDispatch();
   const [galleries, setGalleries] = useState<IArtworkEntity[]>([]);
-  const [status, setStatus] = useState<string>();
+  const [status, setStatus] = useState<string>('');
 
   const getGallery = async (option?) => {
     try {
@@ -49,10 +51,7 @@ const ListGallery = () => {
     setGalleries([]);
 
     (async () => {
-      const newGalleries =
-        !status || status === 'all'
-          ? await getGallery()
-          : await getGallery({ status });
+      const newGalleries = await getGallery({ status, limit });
       handleAfterGet(newGalleries);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -61,6 +60,7 @@ const ListGallery = () => {
   const handleLoadMore = async lastDocumentId => {
     const newGalleries = await getGallery({
       status,
+      limit,
       startAfter: lastDocumentId
     });
     handleAfterGet(newGalleries);
@@ -70,7 +70,7 @@ const ListGallery = () => {
   return (
     <>
       <AppsHeader>
-        <GalleryListHeader onChange={setStatus} />
+        <GalleryListHeader setStatus={setStatus} status={status} />
       </AppsHeader>
 
       <AppsContent
