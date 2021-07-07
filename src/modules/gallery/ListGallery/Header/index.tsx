@@ -1,29 +1,45 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
-import { Fonts } from '../../../../shared/constants/AppEnums';
-import AppSelect from '@crema/core/AppSelect';
-import { ICyoStatus } from '../../types';
+import {
+  Box,
+  FormControl,
+  InputLabel,
+  makeStyles,
+  MenuItem,
+  Select
+} from '@material-ui/core';
 
-const selectValues = Object.values(ICyoStatus);
+const useStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2)
+  }
+}));
 
-const GalleryListHeader = ({ onChange }) => {
+const GalleryListHeader = ({ setStatus, status }) => {
+  const classes = useStyles();
+
   return (
-    <Box display="flex" flex={1} alignItems="center">
-      <Box display="flex" flex={1}>
-        <Box fontWeight={Fonts.BOLD} mr={3}>
-          Gallery
-        </Box>
-      </Box>
-      <Box display="flex" alignItems="center" mr={6}>
-        <Box component="span" mb={1} fontWeight={Fonts.MEDIUM}>
-          Status:
-        </Box>
-        <AppSelect
-          menus={['all', ...selectValues]}
-          defaultValue={'all'}
-          onChange={onChange}
-        />
-      </Box>
+    <Box fontSize="large" display="flex" alignItems="center" mb={6}>
+      <FormControl variant="outlined" className={classes.formControl}>
+        <InputLabel id="demo-simple-select-outlined-label">Status</InputLabel>
+        <Select
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          onChange={e => setStatus(e.target.value)}
+          value={status}
+          label="Status"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="in_review">In Review</MenuItem>
+          <MenuItem value="approved">Approved</MenuItem>
+          <MenuItem value="rejected">Rejected</MenuItem>
+        </Select>
+      </FormControl>
     </Box>
   );
 };

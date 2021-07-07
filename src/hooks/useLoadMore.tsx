@@ -30,7 +30,6 @@ const useLoadMore = (handleLoadMore: Function, setData: Function) => {
   }, [lastDocumentId, isStop]);
 
   const handleScroll = async () => {
-    console.log(isBottomOfPage());
     if (isBottomOfPage()) await handleLoadMore(lastDocumentId);
   };
 
