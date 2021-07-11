@@ -34,6 +34,7 @@ const ListGallery = () => {
   const dispatch = useDispatch();
   const [galleries, setGalleries] = useState<IArtworkEntity[]>([]);
   const [status, setStatus] = useState<string>('');
+  const [order, setOrder] = useState<string>('desc');
 
   const getGallery = async (option?) => {
     try {
@@ -44,23 +45,26 @@ const ListGallery = () => {
       return newGalleries;
     } catch ({ message = DEFAULT_ERROR }) {
       dispatch(fetchError(message));
+      return [];
     }
   };
 
   useEffect(() => {
     setGalleries([]);
-
-    (async () => {
-      const newGalleries = await getGallery({ status, limit });
-      handleAfterGet(newGalleries);
-    })();
+    handleLoadMore('');
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [status]);
+  }, [status, order]);
 
   const handleLoadMore = async lastDocumentId => {
     const newGalleries = await getGallery({
       status,
       limit,
+      orderBy: [
+        {
+          field: 'createdAt',
+          order
+        }
+      ],
       startAfter: lastDocumentId
     });
     handleAfterGet(newGalleries);
@@ -70,7 +74,12 @@ const ListGallery = () => {
   return (
     <>
       <AppsHeader>
-        <GalleryListHeader setStatus={setStatus} status={status} />
+        <GalleryListHeader
+          setStatus={setStatus}
+          status={status}
+          order={order}
+          setOrder={setOrder}
+        />
       </AppsHeader>
 
       <AppsContent

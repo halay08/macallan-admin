@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const GalleryListHeader = ({ setStatus, status }) => {
+const GalleryListHeader = ({ setStatus, status, order, setOrder }) => {
   const classes = useStyles();
 
   return (
@@ -38,6 +38,20 @@ const GalleryListHeader = ({ setStatus, status }) => {
           <MenuItem value="in_review">In Review</MenuItem>
           <MenuItem value="approved">Approved</MenuItem>
           <MenuItem value="rejected">Rejected</MenuItem>
+        </Select>
+      </FormControl>
+
+      <FormControl variant="outlined" className={classes.formControl}>
+        <InputLabel id="demo-simple-select-outlined-label">Order</InputLabel>
+        <Select
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          onChange={e => setOrder(e.target.value)}
+          value={order}
+          label="Order"
+        >
+          <MenuItem value="desc">Descending</MenuItem>
+          <MenuItem value="asc">Ascending</MenuItem>
         </Select>
       </FormControl>
     </Box>
