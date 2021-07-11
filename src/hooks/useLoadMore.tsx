@@ -34,14 +34,14 @@ const useLoadMore = (handleLoadMore: Function, setData: Function) => {
   };
 
   const handleAfterGet = data => {
-    const { items = [], pagination = {} } = data;
+    const { items = [], pagination = {}, option = {} } = data;
     if (!pagination.totalItemOfPage) {
       setIsStop(true);
       return;
     }
     setData(prevState => [...prevState, ...items]);
     setLastDocumentId(pagination.lastRef || '');
-    setIsStop(false);
+    setIsStop(pagination.totalItemOfPage < option.limit);
   };
 
   return [handleAfterGet];
