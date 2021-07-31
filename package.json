@@ -86,7 +86,7 @@
     "yup": "^0.29.3"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "env-cmd -f .env.local react-scripts start",
     "build": "react-scripts build",
     "build:develop": "env-cmd -f .env.development yarn build",
     "build:staging": "env-cmd -f .env.staging npm run build",
